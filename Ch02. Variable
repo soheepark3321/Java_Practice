@@ -1,0 +1,14 @@
+1. 두 변수 값 교환
+(변수 tmp 이용)
+
+int x = 10, y = 20;
+int tmp = 0; //변수 초기화
+
+tmp = x;
+x = y;
+y = tmp;
+
+System.out.println("x : " + x + "y : " + y);
+
+>결과
+x : 20 y : 10
