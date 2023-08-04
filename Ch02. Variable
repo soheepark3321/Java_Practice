@@ -98,3 +98,50 @@ float pi = 3.14f;가 맞는 표현임.
 덧셈 연산 : 문자열 + any type = 문자열
 -> 문자열이 아닌 경우, 문자열로 변환시키고 더한다.
 -> (ex. 7) 기본형 타입 값을 문자열로 변환할 때는 빈 문자열("")을 더해주면 됨
+
+*printf : 형식 변환 출력 가능 (ex. 정수를 8진수로 출력), 출력 후 줄바꿈 x
+-> println은 값 입력한 그대로만 출력 가능
+
+System.out.printf("age:%d", 14);
+-> 정수형 변수 저장 값을 10진 정수로 출력할 때는 지시자 '%d' 사용
+
+System.out.printf("age:%d year:%d", 14, 2023);
+-> 지시자를 여러 개 사용해야 할 때, 순서에 일치하도록 쓰면 됨.
+
+System.out.printf("age:%d%nyear:%d", 14, 2023);
+-> printf는 줄바꿈이 안되므로 %n을 이용하여 줄바꿈 실행
+
+지시자
+%b : boolean 형식 출력
+%d : decimal (10진) 정수 형식 출력
+%o : octal (8진) 정수 출력
+%x, %X : hexa-decimal (16진) 정수 출력
+%f : floating-point (부동 소수점) 형식 출력
+%e, %E : exponent (지수) 표현식 형식 출력
+%c : character 출력
+%s : string 출력
+
+	byte b = 1;
+	short s = 2;
+	char c = 'A';
+	
+	int finger = 10;
+	long big = 100_000_000_000L;
+	long hex = 0xFFFF_FFFF_FFFF_FFFFL;
+	
+	int octNum = 010;
+	int hexNum = 0x10;
+	int binNum = 0b10;
+	
+	System.out.printf("b=%d%n", b);
+	System.out.printf("s=%d%n", s);
+	System.out.printf("c=%c, %d %n", c, (int)c);
+	System.out.printf("finger=[%5d]%n", finger);
+	System.out.printf("finger=[%-5d]%n", finger);
+	System.out.printf("finger=[%05d]%n", finger);
+	System.out.printf("big=%d%n", big);
+	System.out.printf("hex=%#x%n", hex);
+	System.out.printf("octNum=%o, %d%n", octNum, octNum);
+	System.out.printf("hexNum=%x, %d%n", hexNum, hexNum);
+	System.out.printf("binNum=%s, %d%n", Integer.toBinaryString(binNum), binNum);
+
