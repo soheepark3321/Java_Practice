@@ -5,8 +5,92 @@ mid(1,2,3)==2
 mid(1,1,1)==1
 mid(1,2,2)==2
 
+---
+package practice;
+import java.util.*;
+import static org.junit.Assert.*;
+
+public class exjava {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int mid(int x, int y, int z) {
+			return y;
+		}
+		
+		@Test
+		public void test() {
+			assertTrue(mind(1,2,3)==2);
+		}
+		
+		@Test
+		public void test1() {
+			assertTrue(mind(3,1,2)==2);
+		}
+		
+		@Test
+		public void test2() {
+			assertTrue(mind(1,2,2)==2);
+		}
+		
+	}
+
+}
+
+
 2.
 5 * 5 이차원 int 배열 받아서, 빙고 갯수를 세어서 반환하는 bingoCount() 메서드를 작성하시오.
+
+----------------
+package practice;
+import java.util.*;
+import static org.junit.Assert.*;
+
+public class exjava {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int bingoCount(int[][] arr) {
+			int bingoCount=0;
+			
+			//코드를 넣어 완성하시오.
+			
+			return bingoCnt;
+		}
+		
+		int mid(int x, int y, int z) {
+			return y;
+		}
+		
+		@Test
+		public void test() {
+			int[][] arr = {
+					{1,1,1,1,1},
+					{1,1,1,1,1},
+					{1,1,1,1,1},
+					{1,1,1,1,1},
+					{1,1,1,1,1}
+			}
+			assertTrue(mind(arr)==12);
+		} //이런거 복사를 여러개 해서 코드 만들어야 함.
+		
+		@Test
+		public void test() {
+			int[][] arr = {
+					{0,0,0,0,0},
+					{1,1,1,1,1},
+					{1,1,1,1,1},
+					{1,1,1,1,1},
+					{1,1,1,1,1}
+			}
+			assertTrue(mind(arr)==4);
+		} //이런거 복사를 여러개 해서 코드 만들어야 함.
+		
+
+		
+	}
+
+}
 
 3.
 5장의 카드를 배열로 받아서 등급을 문자열로 반환하는 random check 메서드를 작성하시오.
