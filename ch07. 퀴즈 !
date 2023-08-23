@@ -1,0 +1,41 @@
+1.
+세 개의 정수 x, y, z를 받아서 중간크기의 값을 반환하는 mid라는 메서드 작성
+
+mid(1,2,3)==2
+mid(1,1,1)==1
+mid(1,2,2)==2
+----------
+package practice;
+import java.util.*;
+
+public class MyMathTest {
+	int mid(int x, int y, int z) {
+		return y;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MyMathTest t = new MyMathTest();
+		int result = t.mid(1, 2, 3);
+		System.out.println(result);
+	}
+
+}
+
+---------------------------------------------------------
+  결과 : 2
+
+
+
+
+
+
+
+
+
+  2.
+  5 * 5 이차원 int 배열 받아서, 빙고 갯수를 세어서 반환하는 bingoCount() 메서드를 작성하시오.
+
+----------------
+
+  
