@@ -15,7 +15,9 @@ public class exjava {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int mid(int x, int y, int z) {
-			return y;
+if((x<=y && y<=z) || (z<=y && y<=x)) return y;
+if((y<=x && x<=z) || (z<=x && x<=y)) return x;
+returnz;
 		}
 		
 		@Test
@@ -54,6 +56,8 @@ public class exjava {
 			int bingoCount=0;
 			
 			//코드를 넣어 완성하시오.
+
+
 			
 			return bingoCnt;
 		}
