@@ -107,3 +107,73 @@ public class exjava {
 6. "STRAIGHT" 연속 숫자 5장 (2,3,4,5,6)
 7. "FLUSH" 같은 무늬 5장 
 8. "STRAIGHT FLUSH" 같은 무늬면서 연속 숫자
+---
+import org.junit.Test;
+
+class Card {
+	int num;
+	String kind;
+	
+	Card(int num, String kind) {
+		this.num = num;
+		this.kind = kind;
+	}
+	
+	public String toString() {
+		return num + kind;
+	}
+}
+
+public class StarTest {
+	String rankCheck(Card[] cardArr) {
+		//카운팅 
+		int[] cntArr = new int[14]; //카드가 1~13이니까 (0~13) 
+		
+		for (int i=0; i<cardArr.length; i++) 
+			cntArr[cardArr[i].num]++;
+		//STARIGHT
+		boolean isStraight = true;
+		
+		for(int i=0; i<cardArr.length; i++) {
+			if(cntArr[i]==1)
+				for(int j=1; j<=4; j++) {
+					if(cntArr[j] != 1)
+						isStraight = false;
+				}
+		}
+		
+		//FLUSH
+		boolean isFlush = true;
+		String kind = cardArr[0].kind;
+		
+		for(int i=1; i<cardArr.length; i++) {
+			if(kind.equals(cardArr[i].kind))
+				isFlush = false;
+		}
+		
+		//PAIR, THREE CARD, FOUR CARD
+		int pair=0;
+		boolean isThreeCard = false;
+		boolean isFourCard = false;
+		
+		for(int i=0; i<cntArr.length; i++) {
+			if(cntArr[i]==2) pair++;
+			if(cntArr[i]==3) isThreeCard = true;
+			if(cntArr[i]==4) isFourCard = true;
+		}
+		
+		//최종결과 반환 
+		if(isStraight && isFlush)
+			return "STRAIGHT FLUSH";
+		if(isFlush) //else if 쓸 필요 없음. 바로 return하고 빠져나가니까.
+			return "FLUSH";
+		if(isStraight) 
+			return "STRAIGHT";
+		if(isThreeCard && pair > 0)
+			return "FULL HOUSE";
+		
+		return "NO RANK";
+		
+		//높은거에서부터 정렬하는건 else를 안써도 된다. 
+	}
+}
